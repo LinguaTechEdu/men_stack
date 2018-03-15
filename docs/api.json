@@ -1,0 +1,14 @@
+{
+  "name": "MEN Stack documentation",
+  "desc": "A description of all api endpoints.",
+  "baseUrl": "http://localhost:5000",
+  "endpoints": {
+    "home": [{"method": "GET", "url": "/", "desc": "Homepage."}],
+    "users": [
+      {"method": "GET", "url": "/users", "desc": "All users"},
+      {"method": "GET", "url": "/users/:id", "desc": "Single user."},
+      {"method": "POST", "url": "/users/new", "desc": "Add user."},
+      {"method": "PUT", "url": "/users/update", "desc": "Parially update user."}
+    ]
+  }
+}

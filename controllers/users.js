@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/new', function(req, res) {
-    var user = new db.User({ username: 'kay', email: 'kay@ex.co' });
+    var user = new db.User(req.body);
     user.save(function(err, newUser) {
         if (err) {
             console.log(err);
