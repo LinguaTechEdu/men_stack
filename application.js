@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // req.body
 
 // Routes
 app.use('/', require('./controllers/index'));
+app.use('/users', require('./controllers/users'));
 
 
 module.exports = app;
