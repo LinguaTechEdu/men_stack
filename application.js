@@ -9,4 +9,8 @@ app.use(express.static('public'));          // Static directory
 app.use(logger('dev'));                     // Server logging
 app.use(bodyParser.urlencoded({ extended: true })); // req.body
 
+// Routes
+app.use('/', require('./controllers/index'));
+
+
 module.exports = app;
