@@ -17,6 +17,19 @@ Use this as boilerplate and a source of code snippets for your MEN stack project
 * [Expressjs Docs](https://expressjs.com)
 * [Passportjs Docs](http://www.passportjs.org/)
 * [EJS Templates](https://github.com/mde/ejs)
+* [EJS Practice](https://ionicabizau.github.io/ejs-playground/)
 * [About REST](https://restfulapi.net/)
 * [About NPM](https://docs.npmjs.com/)
 
+## Vocabulary
+
+- Route
+- Controller/Handler
+- Server
+- Instance
+- HTTP status
+- Model
+- View
+- Template
+- RESTful
+- API

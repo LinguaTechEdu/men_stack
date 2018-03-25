@@ -1,6 +1,6 @@
 var app = require('./application');
-var PORT = 5000;
+var PORT = process.env.PORT || 5000;
 
-app.listen(PORT || process.env.PORT, function () {
+app.listen(PORT, function () {
     console.log(`MEN stack Demo running on ${PORT} ...`);
 });

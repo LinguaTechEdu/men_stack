@@ -1,0 +1,21 @@
+<h1>Edit Profile for <%= user.username %></h1>
+<hr>
+<div>
+    <form action="/users/<%= user._id %>" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="username" name="username" class="form-control" id="username" value="<%= user.username %>">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" class="form-control" id="email" value="<%= user.email %>">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password" >
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </fieldset>
+    </form>
+</div>

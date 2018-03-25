@@ -1,9 +1,9 @@
 var express = require('express'),
     router = express.Router(),
-    db = require('../models/index');
-var apiDocs = require('../docs/api.json');
+    db = require('../models/index'),
+    apiDocs = require('../docs/api.json');
 
-// API index -- Returns documentation
+// ==== GET documentation
 router.get('/', function(req, res) {
     console.log('Api is working!');
     res.status(200).json(apiDocs);
@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
  * frontend frameworks!
  */
 
-// List users
+// ==== GET /api/users
 router.get('/users', function(req, res) {
     db.User.find({}, function(err, users) {
         if (err) {
@@ -29,7 +29,7 @@ router.get('/users', function(req, res) {
     })
 });
 
-// Show user
+// ==== GET /api/user
 router.get('/users/:id', function(req, res) {
     db.User.findOne(req.body.id, function(err, user) {
         if (err) {
@@ -42,9 +42,12 @@ router.get('/users/:id', function(req, res) {
     })
 });
 
-// Create user
+// ==== POST /api/users/new
 router.post('/users/new', function(req, res) {
-    db.User.create(req.body, function(err, user) {
+    var password = req.body.password;
+    var u = new db.User(req.body);
+    u.encrypt(u.password);
+    u.save(function(err, user) {
         if (err) {
             console.log(err);
             res.status(400).json(err);
@@ -55,7 +58,7 @@ router.post('/users/new', function(req, res) {
     })
 });
 
-// Delete user
+// ==== DELETE /api/user
 router.delete('/users/:id', function(req, res) {
     db.User.remove(req.body.id, function(err) {
         if (err) {
