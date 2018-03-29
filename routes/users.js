@@ -2,8 +2,6 @@ var express = require('express'),
     router = express.Router(),
     db = require('../models/index');
 
-// TODO: Any way to make use of router.params for the id endpoints?
-
 // VERIFY AUTHENTICATION
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
