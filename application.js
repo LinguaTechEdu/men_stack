@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // req.body
 
 app.set('view engine', 'ejs');      // Template engine (ejs)
 
+// Express session: https://github.com/expressjs/session#cookiesecure
 app.use(session({
     secret: 'secretkeyzdevbae',
     resave: false,
@@ -26,6 +27,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+// Now that this instance of passport is configured, we can pass it to any modules that need it:
 require('./config/auth')(passport);
 
 // Routes

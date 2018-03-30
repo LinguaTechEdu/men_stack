@@ -2,6 +2,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var db = require('../models/index'),
     User = db.User;
 
+// An instance of passport is given to this module to use for setting up the login and signup strategies
 module.exports = function(passport) {
     /* =========================================================================
      * Passport Session
