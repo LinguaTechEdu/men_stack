@@ -58,7 +58,7 @@ router.post('/users/new', function(req, res) {
     })
 });
 
-// ==== DELETE /api/user
+// ==== DELETE /api/users
 router.delete('/users/:id', function(req, res) {
     db.User.remove(req.body.id, function(err) {
         if (err) {
